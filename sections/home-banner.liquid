@@ -1,0 +1,129 @@
+<div class="{{ section.class }}">
+  <div class="container full">
+    {% if section.settings.banner_image_bg_mobile != blank %}
+      <img
+        src="{{ section.settings.banner_image_bg_mobile | image_url }}"
+        alt=""
+        loading="lazy"
+        width="{{ section.settings.banner_image_bg_mobile.width }}"
+        height="{{ section.settings.banner_image_bg_mobile.height }}"
+        class="block w-full h-full image_mobile"
+      >
+    {% endif %}
+
+    <div class="banner_text">
+      <div class="banner_text__content">
+        <div class="banner_text__content_logo">
+          {% if section.settings.banner_text_1 != blank %}
+            <div class="banner_text__content_logo--text-right">
+              <h5>{{ section.settings.banner_text_1 }}</h5>
+              {% if section.settings.banner_text_2 != blank %}
+                <h2 class="h1">{{ section.settings.banner_text_2 }}</h2>
+              {% endif %}
+              {% if section.settings.banner_text_3 != blank %}
+                <p>{{ section.settings.banner_text_3 }}</p>
+              {% endif %}
+
+              <div class="banner_text__content_logo--text-right--links">
+                {% if section.settings.text_link_1 != blank and section.settings.text_link_1 != blank %}
+                  <a href="{{ section.settings.url_link_1 }}" class="btn btn-primary banner_text__content_logo--text-right--links--join-us">{{ section.settings.text_link_1 }}</a>
+                {% endif %}
+                {% if section.settings.text_link_2 != blank and section.settings.text_link_2 != blank %}
+                  <a href="{{ section.settings.url_link_2 }}" class="btn btn-secondary banner_text__content_logo--text-right--links--learn-more">{{ section.settings.text_link_2 }}</a>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="banner_text_image">
+        {% if section.settings.banner_image_left != blank %}
+          <img
+            src="{{ section.settings.banner_image_left | image_url }}"
+            alt=""
+            loading="lazy"
+            width="{{ section.settings.banner_image_left.width }}"
+            height="{{ section.settings.banner_image_left.height }}"
+            class="block w-full h-full"
+          >
+        {% else %}
+          {{ 'lifestyle-2' | placeholder_svg_tag }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Home Banner",
+  "class": "home-banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner_image_bg_desk",
+      "label": "Banner Image Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image_bg_mobile",
+      "label": "Banner Image Mobile"
+    },
+    {
+      "type": "header",
+      "content": "Banner Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image_left",
+      "label": "Banner Image Left"
+    },
+    {
+      "type": "text",
+      "id": "banner_text_1",
+      "label": "Banner Text 1",
+      "default": "Welcome"
+    },
+    {
+      "type": "text",
+      "id": "banner_text_2",
+      "label": "Banner Text 2",
+      "default": "Best Learning Opportunities"
+    },
+    {
+      "type": "text",
+      "id": "banner_text_3",
+      "label": "Banner Text 3",
+      "default": "Our goal is to make online education work for everyone"
+    },
+    {
+      "type": "text",
+      "id": "text_link_1",
+      "label": "Text Link 1",
+      "default": "Join Us"
+    },
+    {
+      "type": "url",
+      "id": "url_link_1",
+      "label": "Url Link"
+    },
+    {
+      "type": "text",
+      "id": "text_link_2",
+      "label": "Text Link 2",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "url_link_2",
+      "label": "Url Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Banner"
+    }
+  ]
+}
+{% endschema %}

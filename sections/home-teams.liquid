@@ -1,0 +1,126 @@
+<div class="{{ section.class }}">
+  <div class="container">
+    <div class="teams_container">
+      <div class="teams_container--header">
+        {% if section.settings.teams_label != blank %}
+          <span>{{ section.settings.teams_label }}</span>
+        {% endif %}
+  
+        {% if section.settings.teams_title != blank %}
+          <h3>{{ section.settings.teams_title }}</h3>
+        {% endif %}
+  
+        {% if section.settings.teams_description != blank %}
+          <p class="">{{ section.settings.teams_description }}</p>
+        {% endif %}
+      </div>
+
+      <div class="teams_container--lists">
+        {% if section.blocks.size > 0 %}
+          <div class="teams_item">
+            {% for block in section.blocks %}
+                <div class="team_item">
+                    <img src="{{ block.settings.person_image | image_url }}" alt="" loading="lazy" width="{{ block.settings.person_image.width }}" height="{{ block.settings.person_image.height }}" class="block w-fit">
+                    <div class="team_item--content">
+                      <h5>{{ block.settings.person_name }}</h5>
+                      <p>{{ block.settings.person_position }}</p>
+                      <div class="team_item--content--socials">
+                        {% if block.settings.url_fb != blank %}
+                          <a href="{{ block.settings.url_fb }}" class="team_item--content--socials--fb" >
+                            {% render 'icon-cus-facebook' %}
+                          </a>
+                        {% endif %}
+                        
+                        {% if block.settings.url_insta != blank %}
+                          <a href="{{ block.settings.url_insta }}" class="team_item--content--socials--insta" >
+                            {% render 'icon-cus-insta' %}                           
+                          </a>
+                        {% endif %}
+
+                        {% if block.settings.url_tw != blank %}
+                          <a href="{{ block.settings.url_tw }}" class="team_item--content--socials--tw" >
+                            {% render 'icon-cus-tw' %}                  
+                          </a>
+                        {% endif %}
+                      </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Home Teams",
+    "class": "home-teams",
+    "settings": [
+      {
+        "type": "text",
+        "id": "teams_label",
+        "label": "Label",
+        "default": "Team"
+      },
+      {
+        "type": "text",
+        "id": "teams_title",
+        "label": "Title",
+        "default": "Get Quality Education"
+      },
+      {
+        "type": "text",
+        "id": "teams_description",
+        "label": "Description",
+        "default": "Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics "
+      }
+    ],
+    "blocks": [
+      {
+        "type": "teams",
+        "name": "Teams",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "person_image",
+            "label": "Block Image"
+          },
+          {
+            "type": "text",
+            "id": "person_name",
+            "label": "Name",
+            "default": "Julian Jameson"
+          },
+          {
+            "type": "text",
+            "id": "person_position",
+            "label": "Position",
+            "default": "Profession"
+          },
+          {
+            "type": "url",
+            "id": "url_fb",
+            "label": "URL Facebook"
+          },
+          {
+            "type": "url",
+            "id": "url_insta",
+            "label": "URL Instagram"
+          },
+          {
+            "type": "url",
+            "id": "url_tw",
+            "label": "URL Twitter"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Home Teams"
+      }
+    ]
+  }
+{% endschema %}

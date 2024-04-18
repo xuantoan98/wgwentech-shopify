@@ -1,0 +1,316 @@
+:root {
+  --black: #252b42;
+  --secondary-3: #ffd9cd;
+  --secondary-2: #ff876c;
+  --white: #ffffff;
+  --rose: #ffd8cc;
+  --grey3: #f3f3f3;
+  --grey: #b5b5b5;
+  --grey4: #7d7d7d;
+  --grey5: #8a8a8a;
+  --second-text-color: #737373;
+  --primary-color: #96bb7c;
+}
+
+/* Monserrat Font */
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat-Thin.ttf") format("opentype"),
+    url("Montserrat-Thin.ttf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat-ExtraLight.ttf") format("opentype"),
+    url("Montserrat-ExtraLight.ttf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat-Regular.ttf") format("opentype"),
+    url("Montserrat-Regular.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat-Medium.ttf") format("opentype"),
+    url("Montserrat-Medium.ttf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat-SemiBold.ttf") format("opentype"),
+    url("Montserrat-SemiBold.ttf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat-Bold.ttf") format("opentype"),
+    url("Montserrat-Bold.ttf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat-Black.ttf") format("opentype"),
+    url("Montserrat-Black.ttf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+body {
+  color: var(--black);
+  font-weight: 400;
+  font-family: "Montserrat";
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  line-height: 20px;
+}
+
+p,
+a {
+  font-family: "Montserrat";
+  color: var(--black);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+a {
+  outline: none;
+}
+
+a:hover,
+a:not([disabled]):hover {
+  text-decoration: underline;
+}
+
+h1,
+.h1 {
+  font-family: "Montserrat";
+  color: var(--black);
+  font-size: 58px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 80px;
+  letter-spacing: 0.2px;
+}
+
+h2,
+.h2 {
+  font-family: "Montserrat";
+  color: var(--black);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: 0.1px;
+}
+
+h3,
+.h3 {
+  font-family: "Montserrat";
+  color: var(--black);
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.1px;
+}
+
+h4,
+.h4 {
+  font-family: "Montserrat";
+  color: var(--black);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.1px;
+}
+
+h5,
+.h5 {
+  font-family: "Montserrat";
+  color: var(--black);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.1px;
+}
+
+.btn-primary,
+.btn.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  min-width: 137px;
+  background: var(--primary-color);
+  color: var(--white);
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 15px 25px;
+}
+
+.btn-secondary,
+.btn.btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  min-width: 133px;
+  background: inherit;
+  color: var(--primary-color);
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Common */
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.over-hidden {
+  overflow: hidden;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* fix iPhone landscape view blows up font sizes */
+body {
+  -webkit-text-size-adjust: none;
+}
+
+.page-width,
+.container {
+  max-width: 1440px;
+  padding-left: 195px;
+  padding-right: 195px;
+  position: relative;
+  margin: auto;
+}
+
+.page-width.full,
+.container.full {
+  max-width: 100%;
+  padding: 0;
+}
+
+#menu-drawer {
+  width: calc(100% + 32px);
+  margin-left: -16px;
+}
+
+@media all and (max-width: 1200px) {
+  .page-width,
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  body:has(.section-header .header:not(.drawer-menu)) .utility-bar .page-width {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .product.product--large:not(.product--no-media) .product__info-wrapper {
+    padding-right: 0;
+  }
+}
+
+
+@media all and (max-width: 767px) {
+  .image_mobile,
+  .mobile {
+    display: block;
+  }
+
+  .image_desktop,
+  .desktop {
+    display: none;
+  }
+}
